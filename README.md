@@ -2,14 +2,14 @@
 
 This is a simple chat application that allows users to connect to a server and chat with each other.
 
----
+
 ## Getting Started
----
+
 
 - Download or clone the project repository to your local machine.
 - Open a command prompt or terminal window and navigate to the root directory of the project.
 - Run the Server.java script to start the server with the desired port number.
-- Once the server is running, it will show a message saying `Waiting for clients on port ----`
+- Once the server is running, it will show a message saying `Waiting for clients on port -`
 - Enter the user name and port number for the server in the corresponding text fields and click the "Log In" button.
 - To create another client you should just run client.java again with different user name.
   
@@ -20,9 +20,9 @@ This is a simple chat application that allows users to connect to a server and c
 - Make sure that the port number of the server and your entry are the same.
 - If the connection is successful, a new window will open where you can send and receive messages.
   
----
+
 ## Classes And Methods
----
+
 
 ## *Client*
 `Client` is responsible for connecting to the server building the main chat window, and handling window events.The `Client` class also contains global variables for the client thread, the user name, and the socket connection to the server 
@@ -61,7 +61,6 @@ This is a simple chat application that allows users to connect to a server and c
 
 - `sendMessage(final String str)`: This method sends a message to the server. If the message starts with "@" (indicating a private message), the message is sent as-is. Otherwise, the message is prefixed with "@ALL@|" to indicate that it is a message intended for all connected clients. The message is then written to the output stream using Client.output.writeObject() and flushed using Client.output.flush().
   
-  <br>
 
 ## *Server*
 `Server` class creates a GUI that displays messages and waits for clients to connect. When a client connects, the server creates a new thread to handle the connection. The server can send messages to all connected clients or send private messages to specific clients.
@@ -84,7 +83,6 @@ This is a simple chat application that allows users to connect to a server and c
 
 - `isNumeric`: A helper method that checks whether a given string is a valid integer.
 
-<br>
 
 ## *ServerThread*
 
@@ -104,11 +102,10 @@ This is a simple chat application that allows users to connect to a server and c
 
 - `run()` - Overriden method that handles the communication between server and client. The method receives incoming messages from the client and decides if it's a private or public message. If it is a public message, the message is sent to all connected clients. If it is a private message, the message is sent to the intended recipient. The method also removes the client from the server if the client disconnects.
 
-<br>
 
----
+
 ## Prerequisites
----
+
 
 - Java Development Kit (JDK) installed on your computer
 - Basic understanding of Java programming language
@@ -116,49 +113,44 @@ This is a simple chat application that allows users to connect to a server and c
 - Preffered to have IDE for Java programming (such as VSCode or IntelliJ IDEA)
 - Familiarity with GUI programming in Java (JavaSwing) if you want to modify the GUI of the application.
 
-<br>
 
----
+
 ## Project Limitations
----
+
 
 - The application is currently limited to text-based communication only.
 - The application has poor Graphical User Interface.
 - Doesn't have a database to hold data.
 - Lacks several key features, such as user authentication and encryption.
   
-<br>
 
----
+
 ## Future Improvements
----
+
 
 - [ ] Implement support for multimedia messages, such as images and videos.
 - [ ] Improve the user interface to be more intuitive and user-friendly.
 - [ ] Add a database.
 - [ ] Add user authentication and encryption.
   
-<br>
 
----
+
 ## Built With
----
+
 
 * [**Java**](https://www.java.com/en/) 
 
-<br>
 
----
+
 ## Author
----
+
 
 *  [**Dolphin Mulugeta**](https://github.com/Dooyo)
 
-<br>
 
----
+
 ## Acknowledgments
----
+
 
 * To Almighty God
 * To Our Instructor Hailemelekot D.
