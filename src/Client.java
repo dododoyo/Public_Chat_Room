@@ -56,7 +56,7 @@ public class Client {
 	public static JLabel logInEnterUsername = new JLabel("Enter Username: ");
 	public static JTextField logInUsernameBox = new JTextField(20);
 
-	public static JButton logInEnter = new JButton("Enter");
+	public static JButton logInEnter = new JButton("Log In");
 
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		Client.BuildMainWindow();
@@ -273,13 +273,12 @@ public class Client {
 	public static void sendTheMessage() throws IOException {
 		/*
 		 * This method sends the message entered by the user to the server
-		 * using the SEND() method of the clientThread object. If the message
+		 * using the sendMessage() method of the clientThread object. If the message
 		 * field messageTypingArea is not empty, it sends the message and clears the
 		 * field.
 		 * 
-		 * SEND() checks what type of message it is and sends it to the server using
+		 * sendMessage() checks what type of message it is and sends it to the server using
 		 * clients output
-		 * 
 		 * 
 		 * The requestFocus() method sets the focus back to the message field for
 		 * the user to enter the next message. If there is an exception while sending
@@ -289,7 +288,7 @@ public class Client {
 		if (!messageTypingArea.getText().equals("")) {
 			// calling send from clientThreadClass
 
-			clientThread.SEND(messageTypingArea.getText());
+			clientThread.sendMessage(messageTypingArea.getText());
 			messageTypingArea.requestFocus();
 			messageTypingArea.setText("");
 		}
@@ -332,8 +331,8 @@ public class Client {
 
 			top.setText("AAiT Chat Room - Online");
 
-			Thread X = new Thread(clientThread);
-			X.start();
+			Thread eachClientsThread = new Thread(clientThread);
+			eachClientsThread.start();
 
 		} catch (Exception e) {
 			throw new ConnectException();

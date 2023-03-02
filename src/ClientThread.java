@@ -112,7 +112,7 @@ public class ClientThread implements Runnable {
 		}
 	}
 
-	public void SEND(final String str) throws IOException {
+	public void sendMessage(final String str) throws IOException {
 		/*
 		 * This is a method for sending a message to the server. It takes a String str
 		 * as

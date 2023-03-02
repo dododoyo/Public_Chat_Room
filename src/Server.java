@@ -103,7 +103,7 @@ public class Server {
 
 	public void sendToAll(Object data) throws IOException {
 
-		for (Enumeration<ObjectOutputStream> e = getOutputStreams(); e.hasMoreElements();) {
+		for (Enumeration<ObjectOutputStream> e = outputStreams.elements(); e.hasMoreElements();) {
 			/*
 			 * this synchronized block ensures that the method is thread-safe,
 			 * so that multiple clients can be added or removed
@@ -121,13 +121,6 @@ public class Server {
 			}
 		}
 	}
-	// Sending a message to all the available clients
-
-	// To get Output Stream of the available clients from the hash table
-	private Enumeration<ObjectOutputStream> getOutputStreams() {
-		return outputStreams.elements();
-	}
-
 	// Sending private message to specific user
 	public void sendPrivately(String username, String message) throws IOException {
 
