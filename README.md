@@ -145,7 +145,7 @@ This is a simple chat application that allows users to connect to a server and c
 ## Author
 
 
-*  [**Dolphin Mulugeta**](https://github.com/Dooyo)
+*  [**Dolphin Mulugeta**](https://github.com/dododoyo)
 
 
 
